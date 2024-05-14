@@ -1,0 +1,174 @@
+-- component info-badge:
+caption title:
+
+-- ftd.row:
+border-left-width.px: 8
+border-right-width.px: 1
+border-top-width.px: 1
+border-bottom-width.px: 1
+border-color: $inherited.colors.info.border
+background.solid: $inherited.colors.info.base
+padding-vertical.px: 8
+padding-horizontal.px: 10
+width: hug-content
+border-radius.px: 16
+spacing.fixed.px: 12
+align-content: center
+		
+	-- ds.fine-print: $info-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ftd.row
+
+-- end: info-badge
+
+
+
+
+
+
+-- component warning-badge:
+caption title:
+
+-- ftd.row:
+border-left-width.px: 8
+border-right-width.px: 1
+border-top-width.px: 1
+border-bottom-width.px: 1
+border-color: $inherited.colors.warning.border
+background.solid: $inherited.colors.warning.base
+padding-vertical.px: 8
+padding-horizontal.px: 10
+width: hug-content
+border-radius.px: 16
+spacing.fixed.px: 12
+align-content: center
+		
+	-- ds.fine-print: $warning-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ftd.row
+
+-- end: warning-badge
+
+
+
+
+
+
+
+
+-- component success-badge:
+caption title:
+
+-- ftd.row:
+border-left-width.px: 8
+border-right-width.px: 1
+border-top-width.px: 1
+border-bottom-width.px: 1
+border-color: $inherited.colors.success.border
+background.solid: $inherited.colors.success.base
+padding-vertical.px: 8
+padding-horizontal.px: 10
+width: hug-content
+border-radius.px: 16
+spacing.fixed.px: 12
+align-content: center
+		
+	-- ds.fine-print: $success-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ftd.row
+
+-- end: success-badge
+
+
+
+
+
+
+
+
+
+-- component danger-badge:
+caption title:
+
+-- ftd.row:
+border-left-width.px: 8
+border-right-width.px: 1
+border-top-width.px: 1
+border-bottom-width.px: 1
+border-color: $inherited.colors.cta-danger.border
+background.solid: $inherited.colors.cta-danger.base
+padding-vertical.px: 8
+padding-horizontal.px: 10
+width: hug-content
+border-radius.px: 16
+spacing.fixed.px: 12
+align-content: center
+		
+	-- ds.fine-print: $danger-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ftd.row
+
+-- end: danger-badge
+
+
+
+
+
+
+
+
+
+
+-- ds.page: Alert
+
+-- ds.section-column:
+flush: full
+align-content: center
+
+	/-- ds.detail: Alert Component
+	
+	The badge component in our design system provides a visually prominent way
+	to communicate important information or notifications to users. It
+	features distinct styles to convey different levels of urgency or
+	importance, ensuring that users can quickly understand and respond to
+	the information presented.
+	
+	-- ds.rendered:
+	
+	\-- ds.info-badge: Some kind of badge!
+	
+		-- info-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.warning-badge: Some kind of badge!
+	
+		-- warning-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.success-badge: Some kind of badge!
+	
+		-- success-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.danger-badge: Some kind of badge!
+	
+		-- danger-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+-- end: ds.section-column
+
+-- end: ds.page
