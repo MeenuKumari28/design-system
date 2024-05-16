@@ -1,7 +1,7 @@
--- optional string $active-file-preview-url: https://meenukumari28.github.io/design-system/components/alert/
+-- optional string $active-file-preview-url: components/accordion/
 -- optional string $active-file-content: content
 -- string $active-title: Components
--- string $active-sub-title: Alert
+-- string $active-sub-title: Accordion
 
 -- void submit(default_file, fileurl):
 string default_file:
