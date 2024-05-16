@@ -81,14 +81,12 @@ inset: $ds.spaces.inset-square.small
 
 	-- ds.primary-button: Search
 	link: /
-	rounded: true
 
 	-- end: ftd.column
 
 	-- ds.primary-button: Search
 	if: { !search.button-in }
 	link: /
-	rounded: true
 
 	-- end: ds.row
 	
