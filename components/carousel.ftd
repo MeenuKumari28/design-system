@@ -1,0 +1,197 @@
+-- import: meenukumari28.github.io/design-system/record as r
+
+-- integer $current-slide: 1
+
+
+
+-- component carousel:
+optional caption title:
+r.carousel-item-nav list nav:
+children wrap:
+
+-- ds.section-column:
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.large
+margin: $ds.spaces.vertical-gap.extra-large
+
+-- ds.heading-small: $carousel.title
+if: { carousel.title != NULL }
+
+-- ds.column:
+content: $carousel.wrap
+
+-- end: ds.column
+
+-- ds.row:
+
+-- nav-lists:
+for: $obj in $carousel.nav
+index: $obj.index
+
+-- end: ds.row
+
+-- end: ds.section-column
+
+-- end: carousel
+
+
+
+
+
+
+
+
+-- component nav-lists:
+integer index: 1
+boolean $active: false
+
+-- ds.row:
+width.fixed.px if { $current-slide == $nav-lists.index }: 18
+height.fixed.px if { $current-slide == $nav-lists.index }: 18
+width.fixed.px: 14
+height.fixed.px: 14
+radius: $ds.radius.round
+$on-click$: $ftd.toggle($a = $nav-lists.active)
+$on-click$: $ftd.set-integer($a = $current-slide, v = $nav-lists.index)
+background.solid if { nav-lists.index == current-slide }: $ds.colors.cta-primary.base
+background.solid: $ds.colors.info.base
+$on-mouse-enter$: $ftd.set-bool( $a = $nav-lists.active, v = true )
+$on-mouse-leave$: $ftd.set-bool( $a = $nav-lists.active, v = false )
+
+-- end: ds.row
+
+-- end: nav-lists
+
+
+
+
+
+
+
+
+
+-- component carousel-details:
+children wrap:
+optional integer index:
+
+-- ds.column:
+if: { carousel-details.index == current-slide }
+content: $carousel-details.wrap
+
+-- end: ds.column
+
+-- end: carousel-details
+
+
+
+
+
+
+
+
+
+
+-- ds.page: carousel
+
+-- ds.section-column:
+flush: full
+align-content: center
+
+	-- ds.row:
+	align-content: left
+	
+		-- ds.phosphor-icon-button: Back
+		icon: arrow-left
+		link: index.html
+		
+		-- ds.heading-hero: carousel Component
+		width: hug-content
+		
+	-- end: ds.row
+
+	-- ds.rendered:
+	
+	\-- carousel:
+	nav: $navs
+
+	\-- carousel-details:
+	index: 1
+
+	\-- ds.copy-small: 1
+
+	\-- end: carousel-details
+
+	\-- carousel-details:
+	index: 2
+
+	\-- ds.copy-small: 2
+
+	\-- end: carousel-details
+
+	\-- carousel-details:
+	index: 3
+
+	\-- ds.copy-small: 3
+
+	\-- end: carousel-details
+
+	\-- end: carousel
+	
+		-- carousel:
+		nav: $navs
+
+		-- carousel-details:
+		index: 1
+
+		-- ds.row:
+
+		-- ds.code:
+
+		\-- ds.copy-small: hello
+
+		-- ftd.text: hello
+		width.fixed.px: 250
+
+		-- end: ds.row
+
+		-- end: carousel-details
+
+		-- carousel-details:
+		index: 2
+
+		-- ds.copy-small: 2
+
+		-- end: carousel-details
+
+		-- carousel-details:
+		index: 3
+
+		-- ds.copy-small: 3
+
+		-- end: carousel-details
+
+		-- end: carousel
+		
+	-- end: ds.rendered
+
+-- end: ds.section-column
+
+-- end: ds.page
+
+
+
+
+
+-- r.carousel-item-nav list navs:
+
+-- r.carousel-item-nav:
+active: true
+index: 1
+
+-- r.carousel-item-nav:
+index: 2
+
+-- r.carousel-item-nav:
+index: 3
+
+-- end: navs

@@ -1,0 +1,117 @@
+-- or-type band-size:
+
+-- constant integer large: 0
+-- constant integer medium: 1
+-- constant integer small: 2
+
+-- end: band-size
+
+
+-- component band:
+optional caption title:
+optional body body:
+optional ftd.background background:
+ftd.color strip-color: $ds.colors.border
+band-size size: small
+ftd.align align-content: center
+
+-- ftd.column:
+background: $band.background
+border-radius.px: 16
+padding-vertical.px if { band.size == small }: 12
+padding-horizontal.px if { band.size == small }: 8
+padding-vertical.px if { band.size == medium }: 24
+padding-horizontal.px if { band.size == medium }: 16
+padding-vertical.px if { band.size == large }: 36
+padding-horizontal.px if { band.size == large }: 24
+align-content: $band.align-content
+width: fill-container
+border-left-width.px: 8
+border-left-color: $band.strip-color
+
+	-- ds.heading-large: $band.title
+	if: { band.title != NULL }
+	
+	-- ds.copy-regular: $band.body
+	if: { band.body != NULL }
+	
+-- end: ftd.column
+
+-- end: band
+
+
+
+
+
+
+
+-- ds.page: Band
+
+-- ds.section-column:
+ flush: full
+ align-content: center
+
+	-- ds.detail: Band Component
+	
+	A band component is content container with size, background, and content
+	alignment options.
+
+	-- ds.rendered:
+	
+	\-- ds.band: Band component title
+	background.solid: $ds.colors.background.step-1
+	strip-color: white
+	
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+	molestie ante in luctus rutrum.
+	
+		-- band: Band component title
+		background.solid: $ds.colors.background.step-1
+		strip-color: white
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+		molestie ante in luctus rutrum.
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.band: Band component title
+	background.solid: $ds.colors.background.step-1
+	size: medium
+	
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+	molestie ante in luctus rutrum.
+	
+		-- band: Band component title
+		background.solid: $ds.colors.background.step-1
+		size: medium
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+		molestie ante in luctus rutrum.
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.band: Band component title
+	background.solid: $ds.colors.background.step-1
+	size: large
+	align-content: left
+	
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+	molestie ante in luctus rutrum.
+	
+		-- band: Band component title
+		background.solid: $ds.colors.background.step-1
+		size: large
+		align-content: left
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+		molestie ante in luctus rutrum.
+		
+	-- end: ds.rendered
+
+-- end: ds.section-column
+
+-- end: ds.page
