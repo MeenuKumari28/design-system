@@ -101,7 +101,6 @@ width.fixed.px: 460
 	image: $assets.files.assets.placeholder.jpg
 	cta-text: button
 	cta-link: /
-	top: true
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
 	molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
@@ -113,7 +112,6 @@ width.fixed.px: 460
 	image: $assets.files.assets.placeholder.jpg
 	cta-text: button
 	cta-link: /
-	top: true
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
 	molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
