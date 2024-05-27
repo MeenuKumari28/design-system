@@ -1,7 +1,7 @@
 -- import: fastn-community.github.io/svg-icons/phosphor as ph
 
 -- component code:
-caption caption:
+optional caption caption:
 body body:
 optional string icon:
 string text: $code.body
