@@ -11,31 +11,26 @@
 optional caption title:
 optional body body:
 optional ftd.background background:
-ftd.color strip-color: $ds.colors.border
 band-size size: small
 ftd.align align-content: center
 
--- ftd.column:
+-- ds.column:
 background: $band.background
-border-radius.px: 16
-padding-vertical.px if { band.size == small }: 12
-padding-horizontal.px if { band.size == small }: 8
-padding-vertical.px if { band.size == medium }: 24
-padding-horizontal.px if { band.size == medium }: 16
-padding-vertical.px if { band.size == large }: 36
-padding-horizontal.px if { band.size == large }: 24
+radius: $ds.radius.large
+inset if { band.size == small }: $ds.spaces.inset-tall.small
+inset if { band.size == medium }: $ds.spaces.inset-tall.medium
+inset if { band.size == large }: $ds.spaces.inset-tall.large
 align-content: $band.align-content
-width: fill-container
-border-left-width.px: 8
-border-left-color: $band.strip-color
+border: $ds.borders.vertical.small
 
 	-- ds.heading-large: $band.title
 	if: { band.title != NULL }
 	
 	-- ds.copy-regular: $band.body
 	if: { band.body != NULL }
+	align: center
 	
--- end: ftd.column
+-- end: ds.column
 
 -- end: band
 
@@ -60,14 +55,12 @@ border-left-color: $band.strip-color
 	
 	\-- ds.band: Band component title
 	background.solid: $ds.colors.background.step-1
-	strip-color: white
 	
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
 	molestie ante in luctus rutrum.
 	
 		-- band: Band component title
 		background.solid: $ds.colors.background.step-1
-		strip-color: white
 		
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
 		molestie ante in luctus rutrum.

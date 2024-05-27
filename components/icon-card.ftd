@@ -1,0 +1,31 @@
+-- component icon-card:
+caption title:
+ftd.image-src icon:
+body body:
+string cta-link:
+string cta-text:
+optional ftd.background background:
+
+-- ds.column:
+background: $icon-card.background
+inset: $ds.spaces.inset-square.medium
+height: fill-container
+align-content: top-left
+border: $ds.borders.uniform.small
+	
+		-- ftd.image: 
+		src: $icon-card.icon
+
+		-- ds.heading-small: $icon-card.title
+
+	-- ds.copy-regular:
+	height: fill-container
+	
+	$icon-card.body
+	
+	-- ds.primary-button: $icon-card.cta-text
+	link: $icon-card.cta-link
+	
+-- end: ds.column
+
+-- end: icon-card

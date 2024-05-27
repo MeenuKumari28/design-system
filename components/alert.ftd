@@ -2,12 +2,12 @@
 caption title:
 
 -- ftd.row:
-border-left-width.px: 8
+border-left-width.px: 6
 border-right-width.px: 1
 border-top-width.px: 1
 border-bottom-width.px: 1
 border-color: $inherited.colors.info.border
-padding.px: 16
+padding.px: 10
 width: hug-content
 border-radius.px: 16
 spacing.fixed.px: 12
@@ -15,7 +15,7 @@ align-content: center
 	
 	-- ftd.image:
 	src: $assets.files.assets.alert-info.svg
-	width.fixed.px: 20
+	width.fixed.px: 16
 		
 	-- ds.copy-regular: $info-alert.title
 	color: $ds.colors.text-strong
@@ -33,12 +33,12 @@ align-content: center
 caption title:
 
 -- ftd.row:
-border-left-width.px: 8
+border-left-width.px: 6
 border-right-width.px: 1
 border-top-width.px: 1
 border-bottom-width.px: 1
 border-color: $inherited.colors.warning.border
-padding.px: 16
+padding.px: 10
 width: hug-content
 border-radius.px: 16
 spacing.fixed.px: 12
@@ -46,7 +46,7 @@ align-content: center
 	
 	-- ftd.image:
 	src: $assets.files.assets.alert-warning.svg
-	width.fixed.px: 20
+	width.fixed.px: 16
 		
 	-- ds.copy-regular: $warning-alert.title
 	color: $ds.colors.text-strong
@@ -66,12 +66,12 @@ align-content: center
 caption title:
 
 -- ftd.row:
-border-left-width.px: 8
+border-left-width.px: 6
 border-right-width.px: 1
 border-top-width.px: 1
 border-bottom-width.px: 1
 border-color: $inherited.colors.success.border
-padding.px: 16
+padding.px: 10
 width: hug-content
 border-radius.px: 16
 spacing.fixed.px: 12
@@ -79,7 +79,7 @@ align-content: center
 	
 	-- ftd.image:
 	src: $assets.files.assets.alert-success.svg
-	width.fixed.px: 20
+	width.fixed.px: 16
 		
 	-- ds.copy-regular: $success-alert.title
 	color: $ds.colors.text-strong
@@ -100,12 +100,12 @@ align-content: center
 caption title:
 
 -- ftd.row:
-border-left-width.px: 8
+border-left-width.px: 6
 border-right-width.px: 1
 border-top-width.px: 1
 border-bottom-width.px: 1
 border-color: $inherited.colors.cta-danger.border
-padding.px: 16
+padding.px: 10
 width: hug-content
 border-radius.px: 16
 spacing.fixed.px: 12
@@ -113,7 +113,7 @@ align-content: center
 	
 	-- ftd.image:
 	src: $assets.files.assets.alert-danger.svg
-	width.fixed.px: 20
+	width.fixed.px: 16
 		
 	-- ds.copy-regular: $danger-alert.title
 	color: $ds.colors.text-strong

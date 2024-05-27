@@ -2,17 +2,23 @@
 
 -- component accordion:
 optional caption title:
+optional body body:
 r.accordion list accordions-list:
 
 -- ds.column:
 inset: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.vertical-gap.large
+align-content: left
 
 -- ds.heading-medium: $accordion.title
 if: { accordion.title != NULL }
 
+-- ds.copy-regular: 
+if: { accordion.body != NULL }
+
+$accordion.body
+
 -- ds.column:
-spacing: $ds.spaces.vertical-gap.large
 
 -- accordion-content: $obj.title
 for: $obj in $accordion.accordions-list 
@@ -38,17 +44,17 @@ caption title:
 body body:
 optional ftd.image-src icon:
 boolean $toggle: false
+boolean $mouse-in: false
 
--- ftd.column:
-border-left-width.px: 8
-border-right-width.px: 1
-border-top-width.px: 1
-border-bottom-width.px: 1
-border-color: $inherited.colors.border
-padding.px: 16
-width: fill-container
-border-radius.px: 16
-spacing.fixed.px: 12
+-- ds.column:
+border: $ds.borders.uniform.small
+inset: $ds.spaces.inset-square.medium
+radius: $ds.radius.large
+background.solid: $ds.colors.background.base
+background.solid if { accordion-content.mouse-in }: $ds.colors.background.step-1
+$on-mouse-enter$: $ftd.set-bool($a = $accordion-content.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $accordion-content.mouse-in, v = false)
+align-content: left
 
 -- ds.row:
 $on-click$: $ftd.toggle($a = $accordion-content.toggle)
@@ -72,7 +78,7 @@ color: $ds.colors.text-strong
 
 $accordion-content.body
 
--- end: ftd.column
+-- end: ds.column
 
 -- end: accordion-content
 

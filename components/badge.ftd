@@ -1,24 +1,16 @@
 -- component info-badge:
 caption title:
 
--- ftd.row:
-border-left-width.px: 8
-border-right-width.px: 1
-border-top-width.px: 1
-border-bottom-width.px: 1
-border-color: $inherited.colors.info.border
-background.solid: $inherited.colors.info.base
-padding-vertical.px: 8
-padding-horizontal.px: 10
+-- ds.row:
+background.solid: $ds.colors.info.base
+inset: $ds.spaces.inset-wide.small
 width: hug-content
-border-radius.px: 16
-spacing.fixed.px: 12
 align-content: center
 		
 	-- ds.fine-print: $info-badge.title
 	color: $ds.colors.text-strong
 
--- end: ftd.row
+-- end: ds.row
 
 -- end: info-badge
 
@@ -30,24 +22,16 @@ align-content: center
 -- component warning-badge:
 caption title:
 
--- ftd.row:
-border-left-width.px: 8
-border-right-width.px: 1
-border-top-width.px: 1
-border-bottom-width.px: 1
-border-color: $inherited.colors.warning.border
+-- ds.row:
 background.solid: $inherited.colors.warning.base
-padding-vertical.px: 8
-padding-horizontal.px: 10
+inset: $ds.spaces.inset-wide.small
 width: hug-content
-border-radius.px: 16
-spacing.fixed.px: 12
 align-content: center
 		
 	-- ds.fine-print: $warning-badge.title
 	color: $ds.colors.text-strong
 
--- end: ftd.row
+-- end: ds.row
 
 -- end: warning-badge
 
@@ -61,24 +45,16 @@ align-content: center
 -- component success-badge:
 caption title:
 
--- ftd.row:
-border-left-width.px: 8
-border-right-width.px: 1
-border-top-width.px: 1
-border-bottom-width.px: 1
-border-color: $inherited.colors.success.border
+-- ds.row:
 background.solid: $inherited.colors.success.base
-padding-vertical.px: 8
-padding-horizontal.px: 10
+inset: $ds.spaces.inset-wide.small
 width: hug-content
-border-radius.px: 16
-spacing.fixed.px: 12
 align-content: center
 		
 	-- ds.fine-print: $success-badge.title
 	color: $ds.colors.text-strong
 
--- end: ftd.row
+-- end: ds.row
 
 -- end: success-badge
 
@@ -93,24 +69,16 @@ align-content: center
 -- component danger-badge:
 caption title:
 
--- ftd.row:
-border-left-width.px: 8
-border-right-width.px: 1
-border-top-width.px: 1
-border-bottom-width.px: 1
-border-color: $inherited.colors.cta-danger.border
+-- ds.row:
 background.solid: $inherited.colors.cta-danger.base
-padding-vertical.px: 8
-padding-horizontal.px: 10
+inset: $ds.spaces.inset-wide.small
 width: hug-content
-border-radius.px: 16
-spacing.fixed.px: 12
 align-content: center
 		
 	-- ds.fine-print: $danger-badge.title
 	color: $ds.colors.text-strong
 
--- end: ftd.row
+-- end: ds.row
 
 -- end: danger-badge
 

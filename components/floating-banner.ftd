@@ -2,21 +2,26 @@
 optional caption title:
 optional string link:
 boolean $hide: false
+optional ftd.color strip-color:
+optional ftd.background background:
 
--- ftd.column:
+-- ftd.row:
 if: { !floating-banner.hide }
 anchor: window
 bottom.em: 2
 align-self: center
-spacing.fixed.px: 24
-background.solid: $inherited.colors.custom.seven
-;;min-width.fixed.px: 250
-border-radius.px: 6
-
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.space-between
+background: $floating-banner.background
+spacing: space-between
+border-left-width.px: 8
+border-top-width.px: 1
+border-right-width.px: 1
+border-bottom-width.px: 1
+min-width.fixed.px: 250
+border-radius.px: 16
 align-content: left
-inset: $ds.spaces.inset-square.small
+padding-vertical.px: 10
+padding-horizontal.px: 12
+border-left-color: $floating-banner.strip-color
 		
 	-- ds.copy-regular: $floating-banner.title
 	if: { floating-banner.title != NULL }
@@ -29,9 +34,7 @@ inset: $ds.spaces.inset-square.small
 	$on-click$: $ftd.set-bool($a = $floating-banner.hide, v = true)
 	width.fixed.px: 32
 
--- end: ds.row
-
--- end: ftd.column
+-- end: ftd.row
 
 -- end: floating-banner
 
@@ -62,9 +65,13 @@ align-content: center
 	
 	\-- ds.floating-banner: Star on GitHub ⭐
 	link: /
-	
-		-- floating-banner: Star on GitHub ⭐
-		link: components/floating-banner/
+	strip-color: $ds.colors.border-strong
+	background.solid: $ds.colors.background.step-1
+
+	-- floating-banner: Star on GitHub ⭐
+	link: components/floating-banner/
+	strip-color: $ds.colors.border-strong
+	background.solid: $ds.colors.background.step-1
 
 	-- end: ds.rendered
 

@@ -41,7 +41,12 @@ border-width.px: 1
 border-radius.px: 16
 min-width.fixed.px: 152
 width: hug-content
+anchor: parent
+top.px: 32
+right.px: -34
+z-index: 999
 border-color: $inherited.colors.border
+background.solid: $ds.colors.background.step-1
 
 -- mode-changer: $header-dropdown.title
 for: $obj in $header-dropdown.dropdown-item

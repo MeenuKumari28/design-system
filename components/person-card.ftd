@@ -15,21 +15,17 @@ ftd.color border-color: $ds.colors.border
 inset: $ds.spaces.inset-square.medium
 radius: $ds.radius.small
 background: $person-card.background
-width.fixed.px: 460
+width: hug-content
 border if { person-card.border }: $ds.borders.uniform.small
 border-color: $person-card.border-color
 
--- ds.row:
-align-content: top-left
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.small
 
 -- ftd.image:
 src: $person-card.avatar
 height.fixed.px: 40
 width.fixed.px: 40
-
--- ds.column:
-align-content: left
-spacing: $ds.spaces.vertical-gap.extra-small
 
 -- ds.heading-tiny: $person-card.name
 color: $ds.colors.text-strong
@@ -55,8 +51,6 @@ link: $obj.link
 -- end: ds.row
 
 -- end: ds.column
-
--- end: ds.row
 
 -- end: ds.container
 

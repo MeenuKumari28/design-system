@@ -47,6 +47,9 @@ export: hero
 -- import: meenukumari28.github.io/design-system/components/modal as _
 export: modal
 
+-- import: meenukumari28.github.io/design-system/components/icon-card as _
+export: icon-card
+
 -- import: meenukumari28.github.io/design-system/components/empty-page as _
 export: empty-page
 

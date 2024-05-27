@@ -5,16 +5,31 @@ optional ftd.image-src image:
 optional string cta-text:
 optional string cta-link:
 optional ftd.background background:
+optional ftd.color strip-color:
+boolean left-image: false
 
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.space-between
-background: $hero.background
+-- ds.section-row:
+outer-background.solid: $hero.background
 inset: $ds.spaces.inset-square.small
 radius: $ds.radius.zero
+spacing: $ds.spaces.vertical-gap.large
+
+-- ftd.image:
+if: { hero.image != NULL && hero.left-image }
+src: $hero.image
+width.fixed.px: 460
 
 -- ds.column:
 width.fixed.px if { hero.image != NULL }: 500
 align-content: left
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.column:
+border: $ds.borders.top.large
+width.fixed.percent: 30
+border-color: $hero.strip-color
+
+-- end: ds.column
 
 -- ds.heading-large: $hero.title
 
@@ -27,11 +42,11 @@ link: $hero.cta-link
 -- end: ds.column
 
 -- ftd.image:
-if: { hero.image != NULL }
+if: { hero.image != NULL && !hero.left-image }
 src: $hero.image
 width.fixed.px: 460
 
--- end: ds.row
+-- end: ds.section-row
 
 -- end: hero
 
@@ -71,6 +86,34 @@ width.fixed.px: 460
 	image: $assets.files.assets.placeholder.jpg
 	cta-text: button
 	cta-link: /
+
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+	molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
+	consectetur adipiscing elit. Quisque molestie ante in luctus
+	rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	Quisque molestie ante in luctus rutrum.
+	
+	-- end: ds.rendered
+
+	-- ds.rendered:
+		
+	\-- ds.hero: Hero component title
+	image: $assets.files.assets.placeholder.jpg
+	cta-text: button
+	cta-link: /
+	top: true
+
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+	molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
+	consectetur adipiscing elit. Quisque molestie ante in luctus
+	rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	Quisque molestie ante in luctus rutrum.
+
+	-- hero: Hero component title
+	image: $assets.files.assets.placeholder.jpg
+	cta-text: button
+	cta-link: /
+	top: true
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
 	molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,

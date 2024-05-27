@@ -6,6 +6,13 @@
 
 -- end: avatar-size
 
+-- or-type avatar-radius:
+
+-- constant integer default: 0
+-- constant integer curved: 1
+
+-- end: avatar-radius
+
 
 
 
@@ -13,10 +20,9 @@
 -- component avatar:
 ftd.image-src avatar:
 avatar-size size: small
+avatar-radius radius: default
 
 -- ds.column:
-border: $ds.borders.uniform.medium
-radius: $ds.radius.round
 width: hug-content
 
 -- ftd.image:
@@ -27,6 +33,9 @@ width.fixed.px if { avatar.size == medium }: 30
 height.fixed.px if { avatar.size == medium }: 30
 width.fixed.px if { avatar.size == large }: 34
 height.fixed.px if { avatar.size == large }: 34
+border-radius.px if { avatar.radius == curved }: 4
+border-radius.px if { avatar.radius == default }: 100
+fit: cover
 
 -- end: ds.column
 
@@ -60,11 +69,11 @@ height.fixed.px if { avatar.size == large }: 34
 		-- ds.rendered:
 		
 		\-- avatar:
-		avatar: $assets.files.assets.avatar.svg
+		avatar: $assets.files.assets.avatar.jpg
 		size: small
 
 		-- avatar:
-		avatar: $assets.files.assets.avatar.svg
+		avatar: $assets.files.assets.avatar.jpg
 		size: small
 			
 		-- end: ds.rendered
@@ -72,24 +81,66 @@ height.fixed.px if { avatar.size == large }: 34
 		-- ds.rendered:
 		
 		\-- avatar:
-		avatar: $assets.files.assets.avatar.svg
-		size: medium
+		avatar: $assets.files.assets.avatar.jpg
+		size: small
+		radius: curved
 
 		-- avatar:
-		avatar: $assets.files.assets.avatar.svg
-		size: medium
+		avatar: $assets.files.assets.avatar.jpg
+		size: small
+		radius: curved
 			
 		-- end: ds.rendered
 
 		-- ds.rendered:
 		
 		\-- avatar:
-		avatar: $assets.files.assets.avatar.svg
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+		radius: curved
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+		radius: curved
+
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
 		size: large
 
 		-- avatar:
-		avatar: $assets.files.assets.avatar.svg
+		avatar: $assets.files.assets.avatar.jpg
 		size: large
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: large
+		radius: curved
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: large
+		radius: curved
 			
 		-- end: ds.rendered
 
