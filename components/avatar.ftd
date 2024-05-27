@@ -1,0 +1,151 @@
+-- or-type avatar-size:
+
+-- constant integer large: 0
+-- constant integer medium: 1
+-- constant integer small: 2
+
+-- end: avatar-size
+
+-- or-type avatar-radius:
+
+-- constant integer default: 0
+-- constant integer curved: 1
+
+-- end: avatar-radius
+
+
+
+
+
+-- component avatar:
+ftd.image-src avatar:
+avatar-size size: small
+avatar-radius radius: default
+
+-- ds.column:
+width: hug-content
+
+-- ftd.image:
+src: $avatar.avatar
+width.fixed.px if { avatar.size == small }: 26
+height.fixed.px if { avatar.size == small }: 26
+width.fixed.px if { avatar.size == medium }: 30
+height.fixed.px if { avatar.size == medium }: 30
+width.fixed.px if { avatar.size == large }: 34
+height.fixed.px if { avatar.size == large }: 34
+border-radius.px if { avatar.radius == curved }: 4
+border-radius.px if { avatar.radius == default }: 100
+fit: cover
+
+-- end: ds.column
+
+-- end: avatar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ds.page: Avatar
+
+-- ds.section-column: 
+ flush: full
+ align-content: center
+
+	-- ds.detail: Avatar Component
+	
+	The avatar component in our design system provides a visual representation
+	of a user, typically in the form of a profile image or initials.
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: small
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: small
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: small
+		radius: curved
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: small
+		radius: curved
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+		radius: curved
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: medium
+		radius: curved
+
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: large
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: large
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: large
+		radius: curved
+
+		-- avatar:
+		avatar: $assets.files.assets.avatar.jpg
+		size: large
+		radius: curved
+			
+		-- end: ds.rendered
+
+-- end: ds.section-column
+
+-- end: ds.page
+
+

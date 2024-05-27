@@ -1,0 +1,199 @@
+-- or-type checkbox-size:
+
+-- constant integer large: 0
+-- constant integer medium: 1
+-- constant integer small: 2
+
+-- end: checkbox-size
+
+
+
+
+
+
+
+
+
+-- component checkbox:
+optional caption title:
+boolean $is-checked: false
+boolean disabled-checked: false
+boolean disabled-unchecked: false
+checkbox-size size: medium
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.small
+align-content: left
+
+	-- ftd.checkbox:
+	checked if { checkbox.disabled-checked }: true
+	enabled if { checkbox.disabled-checked || checkbox.disabled-unchecked }: false
+	checked: $checkbox.is-checked
+	$on-click$: $ftd.set-bool($a = $checkbox.is-checked, v = $CHECKED)
+	height.fixed.px if { checkbox.size == small }: 16
+	width.fixed.px if { checkbox.size == small }: 16
+	height.fixed.px if { checkbox.size == medium }: 20
+	width.fixed.px if { checkbox.size == medium }: 20
+	height.fixed.px if { checkbox.size == large }: 24
+	width.fixed.px if { checkbox.size == large }: 24
+	
+	-- ds.copy-small: $checkbox.title
+	if: { checkbox.title != NULL && checkbox.size == small}
+
+	-- ds.copy-regular: $checkbox.title
+	if: { checkbox.title != NULL && checkbox.size == medium}
+
+	-- ds.copy-large: $checkbox.title
+	if: { checkbox.title != NULL && checkbox.size == large}
+	
+-- end: ds.row
+
+-- end: checkbox
+
+
+
+
+
+
+
+
+
+
+-- ds.page: Checkbox
+
+-- ds.section-column:
+flush: full
+align-content: center
+
+	-- ds.detail: Checkbox
+
+	The checkbox component in our design system provides a simple and
+	effective way for users to make selections within forms or interfaces.
+	With a clear and familiar design, it allows users to toggle between
+	checked and unchecked states effortlessly. Customizable options for
+	size, and label placement ensure seamless integration into various
+	layouts and styles.
+
+	-- ds.row:
+	
+		-- ds.copy-regular: Default
+		
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: small
+		
+			-- checkbox: Label
+			size: small
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: medium
+		
+			-- checkbox: Label
+			size: medium
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: large
+		
+			-- checkbox: Label
+			size: large
+			
+		-- end: ds.rendered
+
+	-- end: ds.row
+
+	-- ds.row:
+	
+		-- ds.copy-regular: Disabled Unchecked
+		
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: small
+		disabled-unchecked: true
+		
+			-- checkbox: Label
+			size: small
+			disabled-unchecked: true
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: medium
+		disabled-unchecked: true
+		
+			-- checkbox: Label
+			size: medium
+			disabled-unchecked: true
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: large
+		disabled-unchecked: true
+		
+			-- checkbox: Label
+			size: large
+			disabled-unchecked: true
+			
+		-- end: ds.rendered
+
+	-- end: ds.row
+
+	-- ds.row:
+	
+		-- ds.copy-regular: Disabled
+		
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: small
+		disabled-checked: true
+		
+			-- checkbox: Label
+			size: small
+			disabled-checked: true
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: medium
+		disabled-checked: true
+		
+			-- checkbox: Label
+			size: medium
+			disabled-checked: true
+			
+		-- end: ds.rendered
+
+		-- ds.rendered:
+		
+		\-- checkbox: Label
+		size: large
+		disabled-checked: true
+		
+			-- checkbox: Label
+			size: large
+			disabled-checked: true
+			
+		-- end: ds.rendered
+
+	-- end: ds.row
+
+-- end: ds.section-column
+
+-- end: ds.page

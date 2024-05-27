@@ -1,0 +1,142 @@
+-- component info-badge:
+caption title:
+
+-- ds.row:
+background.solid: $ds.colors.info.base
+inset: $ds.spaces.inset-wide.small
+width: hug-content
+align-content: center
+		
+	-- ds.fine-print: $info-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ds.row
+
+-- end: info-badge
+
+
+
+
+
+
+-- component warning-badge:
+caption title:
+
+-- ds.row:
+background.solid: $inherited.colors.warning.base
+inset: $ds.spaces.inset-wide.small
+width: hug-content
+align-content: center
+		
+	-- ds.fine-print: $warning-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ds.row
+
+-- end: warning-badge
+
+
+
+
+
+
+
+
+-- component success-badge:
+caption title:
+
+-- ds.row:
+background.solid: $inherited.colors.success.base
+inset: $ds.spaces.inset-wide.small
+width: hug-content
+align-content: center
+		
+	-- ds.fine-print: $success-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ds.row
+
+-- end: success-badge
+
+
+
+
+
+
+
+
+
+-- component danger-badge:
+caption title:
+
+-- ds.row:
+background.solid: $inherited.colors.cta-danger.base
+inset: $ds.spaces.inset-wide.small
+width: hug-content
+align-content: center
+		
+	-- ds.fine-print: $danger-badge.title
+	color: $ds.colors.text-strong
+
+-- end: ds.row
+
+-- end: danger-badge
+
+
+
+
+
+
+
+
+
+
+-- ds.page: Alert
+
+-- ds.section-column:
+flush: full
+align-content: center
+
+	/-- ds.detail: Alert Component
+	
+	The badge component in our design system provides a visually prominent way
+	to communicate important information or notifications to users. It
+	features distinct styles to convey different levels of urgency or
+	importance, ensuring that users can quickly understand and respond to
+	the information presented.
+	
+	-- ds.rendered:
+	
+	\-- ds.info-badge: Some kind of badge!
+	
+		-- info-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.warning-badge: Some kind of badge!
+	
+		-- warning-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.success-badge: Some kind of badge!
+	
+		-- success-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+	-- ds.rendered:
+	
+	\-- ds.danger-badge: Some kind of badge!
+	
+		-- danger-badge: Some kind of badge!
+		
+	-- end: ds.rendered
+
+-- end: ds.section-column
+
+-- end: ds.page

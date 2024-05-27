@@ -1,0 +1,167 @@
+-- import: meenukumari28.github.io/design-system/record as r
+
+-- component accordion:
+optional caption title:
+optional body body:
+r.accordion list accordions-list:
+
+-- ds.column:
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.large
+align-content: left
+
+-- ds.heading-medium: $accordion.title
+if: { accordion.title != NULL }
+
+-- ds.copy-regular: 
+if: { accordion.body != NULL }
+
+$accordion.body
+
+-- ds.column:
+
+-- accordion-content: $obj.title
+for: $obj in $accordion.accordions-list 
+body: $obj.body
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: accordion
+
+
+
+
+
+
+
+
+
+
+-- component accordion-content:
+caption title: 
+body body:
+optional ftd.image-src icon:
+boolean $toggle: false
+boolean $mouse-in: false
+
+-- ds.column:
+border: $ds.borders.uniform.small
+inset: $ds.spaces.inset-square.medium
+radius: $ds.radius.large
+background.solid: $ds.colors.background.base
+background.solid if { accordion-content.mouse-in }: $ds.colors.background.step-1
+$on-mouse-enter$: $ftd.set-bool($a = $accordion-content.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $accordion-content.mouse-in, v = false)
+align-content: left
+
+-- ds.row:
+$on-click$: $ftd.toggle($a = $accordion-content.toggle)
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ds.heading-tiny: $accordion-content.title
+color: $ds.colors.text-strong
+
+-- ftd.image:
+src: $assets.files.assets.add.svg
+src if { accordion-content.toggle }: $assets.files.assets.remove.svg
+height.fixed.px: 28
+width.fixed.px: 28
+
+-- end: ds.row
+
+-- ds.copy-regular:
+if: { $accordion-content.body != NULL && accordion-content.toggle }
+color: $ds.colors.text-strong
+
+$accordion-content.body
+
+-- end: ds.column
+
+-- end: accordion-content
+
+
+
+
+
+-- r.accordion list list-of-accordions:
+
+-- r.accordion: Are there really zero fees?
+
+At Fastn, we believe businesses shouldn’t have to wait or pay to access money
+they’ve already earned. That’s why it doesn’t cost a penny to create an account
+and there are zero transaction fees when you use the Fastn platform to pay and
+get paid. If you decide to leverage some of our more premium payment features
+(like Fastn Flow, which lets you get paid before your client pays you) there
+may be a small service fee—
+
+-- r.accordion: Is Fastn secure?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- r.accordion: Does Fastn replace my accounting software?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- end: list-of-accordions
+
+
+
+
+
+
+
+
+
+-- ds.page: Expander
+
+-- ds.section-column: 
+ flush: full
+ align-content: center
+
+	-- ds.detail: Expander
+
+	The accordion component in our design system offers an intuitive way to
+	manage and display content that can be expanded or collapsed based on
+	user interaction. With its compact initial state and clear affordances
+	for expansion, it helps conserve screen space while providing access
+	to additional information or details.
+
+	-- ds.rendered:
+		
+		\-- ds.accordion: Your title here
+		accordions-list: $list-of-accordions
+
+		\-- r.accordion list list-of-accordions:
+
+		\-- r.accordion: Are there really zero fees?
+
+		At Fastn, we believe businesses shouldn’t have to wait or pay to access money
+		they’ve already earned. That’s why it doesn’t cost a penny to create an account
+		and there are zero transaction fees when you use the Fastn platform to pay and
+		get paid.
+
+		\-- r.accordion: Is Fastn secure?
+
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+		in luctus rutrum.
+
+		\-- r.accordion: Does Fastn replace my accounting software?
+
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+		in luctus rutrum.
+
+		\-- end: list-of-accordions
+		
+		-- accordion: Your title here
+		accordions-list: $list-of-accordions
+
+		-- end: ds.rendered
+
+-- end: ds.section-column
+
+-- end: ds.page
